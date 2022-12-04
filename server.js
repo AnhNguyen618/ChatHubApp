@@ -38,7 +38,6 @@ We register a middleware function using app.use(). We call express.static() with
 It is a built-in middleware function that serves static assets included in the public/ directory to the client.
 */
 app.use(express.static(publicDirectoryPath));
-
 // Create Bot for chatHub
 const botName = "ChatHub Bot";
 
