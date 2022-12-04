@@ -7,6 +7,7 @@ const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
+
 // The io function is provided by the client-side Socket.IO library that was loaded in public/chat.html.
 const socket = io();
 
