@@ -19,7 +19,7 @@ const {
 
 const app = express(); // We invoke express() to instantiate a new Express application.
 app.get("/",function(req, res, next) {  
-  res.status(200).send("Hi, It works!")  
+  res.status(200).send("./public")  
 });  
 // create the HTTP server using the Express app created on the previous line
 const server = http.createServer(app); // http.createServer() creates a new HTTP server and returns it.
