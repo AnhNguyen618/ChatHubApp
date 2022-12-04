@@ -5,9 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
-
+    "dev": "nodemon server"
   },
   "author": "Anh Nguyen",
   "license": "MIT",
