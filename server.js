@@ -30,7 +30,7 @@ path.join allows us to create an absolute path by combining:
 __dirname: the directory path for the current script
 ./public: the relative path to the public/folder.
 */
-const publicDirectoryPath = path.join(__dirname, "Public");
+const publicDirectoryPath = path.join(__dirname, "./Public");
 
 /*
 -- Serve static files to the client --
