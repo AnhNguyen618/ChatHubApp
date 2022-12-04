@@ -1,4 +1,3 @@
-
 // Extract the room and username value from the URL 
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
@@ -33,7 +32,6 @@ socket.emit('joinRoom', { username, room }, error => {
   SOCKETIO MESSAGE EVENT LISTENER
 */
 socket.on('message', message => {
-    console.log(message);
     outputMessage(message);
  
     // Scroll down
@@ -43,7 +41,6 @@ socket.on('message', message => {
   SOCKETIO IMAGE MESSAGE EVENT LISTENER
 */
 socket.on('imageMessage', image => {
-  console.log("received an image", image);
   outputImage(image);
 });
 
@@ -68,9 +65,7 @@ chatForm.addEventListener('submit', (event) => {
 });
 
 function onImageSelected(event) {
-  console.log("=== img selected", event)
    const img = event.target.files[0];
-   console.log("== DEBUG", img);
 
    let reader = new FileReader();    
    reader.onload = function() {
@@ -95,10 +90,10 @@ function outputMessage(message) {
 function outputImage(image) {  
   const div = document.createElement('div');
   div.classList.add('message');
-  // div.innerHTML = `<p class="meta"> ${image.username} <span> ${image.time} </span></p>
+  div.innerHTML = `<p class="meta"> ${image.username} <span> ${image.time} </span></p>
+  <img class="img" src="${image.text}"/>`;
+  // div.innerHTML = `<p class="meta"> Mars </p>
   // <img class="img" src="${image}"/>`;
-  div.innerHTML = `<p class="meta"> Mars </p>
-  <img class="img" src="${image}"/>`;
   document.querySelector('.chat-messages').appendChild(div);
   //console.log("creating img tag")
 }

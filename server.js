@@ -80,9 +80,8 @@ io.on("connection", (socket) => {
     // Listening for the chatImage event and emitting a message to all players
     socket.on("chatImage", image => {
       const user = getCurrentUser(socket.id);
-      console.log("=== received chatImage", image)
-      io.to(user.room).emit("imageMessage", image);
-     // io.to(user.room).emit("imageMessage", formatImage(user.username,image));
+      const img = formatImage(user.username, image);
+     io.to(user.room).emit("imageMessage", img);
     })
 
     /* 

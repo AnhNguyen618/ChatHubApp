@@ -14,11 +14,12 @@ function formatMessage(username, text) {
 }
 
 function formatImage(username, image) {
-  return {
-    username,
-    image:image.replace('/.*base64'),
+  const result = {
+    username: username,
+    image: image,
     time: moment().format('h:mm a')
   };
+  return result;
 }
 // export
 module.exports = formatMessage, formatImage;
