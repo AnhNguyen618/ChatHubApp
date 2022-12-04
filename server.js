@@ -38,7 +38,7 @@ We register a middleware function using app.use(). We call express.static() with
 It is a built-in middleware function that serves static assets included in the public/ directory to the client.
 */
 app.use(express.static(publicDirectoryPath));
-
+app.get("/")
 // Create Bot for chatHub
 const botName = "ChatHub Bot";
 
@@ -110,8 +110,8 @@ io.on("connection", (socket) => {
 });
 
 // We listen on port 8080 for incoming requests
-const port = 8080 || process.env.port;
+const PORT = process.env.PORT || 5000;
 // and log a message when the server is up and running.
-server.listen(port, () => {
-  console.log(`Server running on port ${port}`)
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
 });
