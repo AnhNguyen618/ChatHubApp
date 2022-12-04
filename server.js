@@ -18,7 +18,9 @@ const {
 
 
 const app = express(); // We invoke express() to instantiate a new Express application.
-
+app.get("/",function(req, res, next) {  
+  res.status(200).send("Hi, It works!")  
+});  
 // create the HTTP server using the Express app created on the previous line
 const server = http.createServer(app); // http.createServer() creates a new HTTP server and returns it.
 const io = socketio(server); // connect Socket.IO to the HTTP server
@@ -38,7 +40,7 @@ We register a middleware function using app.use(). We call express.static() with
 It is a built-in middleware function that serves static assets included in the public/ directory to the client.
 */
 app.use(express.static(publicDirectoryPath));
-app.get("/")
+
 // Create Bot for chatHub
 const botName = "ChatHub Bot";
 
