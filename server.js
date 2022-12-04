@@ -30,14 +30,14 @@ path.join allows us to create an absolute path by combining:
 __dirname: the directory path for the current script
 ./public: the relative path to the public/folder.
 */
-const publicDirectoryPath = path.join(__dirname, "./public");
+const publicDirectoryPath = path.join(__dirname, "public");
 
 /*
 -- Serve static files to the client --
 We register a middleware function using app.use(). We call express.static() within the app.use()
 It is a built-in middleware function that serves static assets included in the public/ directory to the client.
 */
-app.use(express.static('./public'));
+app.use(express.static(publicDirectoryPath));
 // Create Bot for chatHub
 const botName = "ChatHub Bot";
 
