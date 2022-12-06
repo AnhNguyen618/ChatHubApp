@@ -50,7 +50,7 @@ io.on("connection", (socket) => {
         
     // Welcome current user
      socket.emit("message", formatMessage(botName, "Welcome to ChatHub!"));
-    // socket.emit("message", "Welcome to ChatHub!");
+   
     // Broadcasting a message when a user joins
     // We use socket.broadcast.to to send a message event 
     // to let all other users in the room know when a new user has joined the chat.
@@ -85,7 +85,7 @@ io.on("connection", (socket) => {
     })
 
     /* 
-    -- Listening for the disconnect event and removing the player, then update room info ---
+    -- Listening for the disconnect event and removing the user, then update room info ---
     Listen for the disconnect event on the server. 
     This event is automatically fired whenever a socket is disconnected.
     */
