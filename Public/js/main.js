@@ -19,7 +19,7 @@ socket.on('roomUsers', ({ room, users }) => {
 /*
   SOCKETIO JOIN EVENT EMITTER
 Call socket.emit() to send an event to the server.
-If there’s an error, the player will see an alert and be redirected back to the registration page, /.
+If there’s an error, user will see an alert and be redirected back to the registration page, /.
 */
 socket.emit('joinRoom', { username, room }, error => {
   if (error) {
