@@ -3,11 +3,6 @@ const users = [];
 
 /* USER JOIN THE CHAT ROOM */
 function userJoin(id, username, room) {
-  if (!username || !room) {
-    return {
-      error: new Error("Please enter a player name and room!"),
-    };
-  }
 
   const user = { id, username, room };
   users.push(user);
