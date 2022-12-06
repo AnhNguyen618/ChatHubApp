@@ -79,7 +79,7 @@ function onImageSelected(event) {
 function outputMessage(message) {
   const div = document.createElement('div');
   div.classList.add('message');
-  div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
+  div.innerHTML = `<p class="meta">${message.username} <span></span></p>
   <p class="text"> 
       ${message.text}
   </p>`;    
@@ -90,7 +90,7 @@ function outputMessage(message) {
 function outputImage(image) {  
   const div = document.createElement('div');
   div.classList.add('message');
-  div.innerHTML = `<p class="meta"> ${image.username} <span> ${image.time} </span></p>
+  div.innerHTML = `<p class="meta"> ${image.username} <span></span></p>
   <img class="img" src="${image.text}"/>`;
   // div.innerHTML = `<p class="meta"> Mars </p>
   // <img class="img" src="${image}"/>`;
