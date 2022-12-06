@@ -7,17 +7,6 @@ function userJoin(id, username, room) {
   const user = { id, username, room };
   users.push(user);
 
- 
-  const existingUser = users.find((username) => {
-    return user.room === room && user.username === username;
-  });
-
-  if (existingUser) {
-    return {
-      error: new Error("User name is in use!"),
-    };
-  }
-
   return user;
 }
 
