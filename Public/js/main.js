@@ -34,7 +34,7 @@ socket.emit('joinRoom', { username, room }, error => {
 socket.on('message', message => {
     outputMessage(message);
  
-    // Scroll down
+    // Auto scroll down chat area
     chatMessages.scrollTop = chatMessages.scrollHeight;      
 });
 /*
@@ -79,7 +79,7 @@ function onImageSelected(event) {
 function outputMessage(message) {
   const div = document.createElement('div');
   div.classList.add('message');
-  div.innerHTML = `<p class="meta">${message.username} <span></span></p>
+  div.innerHTML = `<p class="meta">${message.username} <span> ${message.time} </span></p>
   <p class="text"> 
       ${message.text}
   </p>`;    
@@ -90,12 +90,9 @@ function outputMessage(message) {
 function outputImage(image) {  
   const div = document.createElement('div');
   div.classList.add('message');
-  div.innerHTML = `<p class="meta"> ${image.username} <span></span></p>
+  div.innerHTML = `<p class="meta"> ${image.username} <span> ${image.time} </span></p>
   <img class="img" src="${image.text}"/>`;
-  // div.innerHTML = `<p class="meta"> Mars </p>
-  // <img class="img" src="${image}"/>`;
   document.querySelector('.chat-messages').appendChild(div);
-  //console.log("creating img tag")
 }
 
   // Add room name to DOM

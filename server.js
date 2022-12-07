@@ -71,13 +71,13 @@ io.on("connection", (socket) => {
 
     }); 
 
-    // Listening for the chatMessage event and emitting a message to all players
+    // Listening for the chatMessage event and emitting a message to all users
     socket.on("chatMessage", (msg) => {
       const user = getCurrentUser(socket.id);
       io.to(user.room).emit("message", formatMessage(user.username, msg));
     });
 
-    // Listening for the chatImage event and emitting a message to all players
+    // Listening for the chatImage event and emitting a message to all users
     socket.on("chatImage", image => {
       const user = getCurrentUser(socket.id);
       const img = formatImage(user.username, image);
